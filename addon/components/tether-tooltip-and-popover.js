@@ -514,11 +514,12 @@ export default EmberTetherComponent.extend({
     }
 
     this._super(...arguments); // Removes tether
-
-    this.sendAction('onDestroy', this);
   },
 
   startTether() {
+    if (!this.get('_tether')) {
+      return;
+    }
 
     /* We can't depend on `_tether.enabled` because
     it's not an Ember property (so won't trigger CP

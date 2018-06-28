@@ -82,7 +82,7 @@ export default Component.extend({
 
   tagName: '',
   layout,
-  enableLazyRendering: false,
+  enableLazyRendering: true,
   event: 'hover', // Options are: hover, click, focus, none
   _childView: null, // This is set during the childView's didRender and is needed for the hide action
 
